@@ -123,5 +123,10 @@
       }
     }
   },
-  "defaultProject": "poke-deck"
+  "defaultProject": "poke-deck",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

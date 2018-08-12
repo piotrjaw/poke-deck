@@ -1,0 +1,24 @@
+<div *ngIf="pokemon">
+  <button (click)="goBack()">Go back</button>
+  <a
+    [routerLink]="['/pokemon', previousId]"
+    [ngClass]="{'poke-detail__navi-link': true, 'poke-detail__navi-link--disabled': previousId === 0}"
+  >
+    Previous
+  </a>
+  <a
+    [routerLink]="['/pokemon', nextId]"
+    [ngClass]="{'poke-detail__navi-link': true, 'poke-detail__navi-link--disabled': next === 0}"
+  >
+    Next
+  </a>
+  {{ pokemon.name }}
+  <img src="{{ pokemon.image }}">
+  <ul>
+    <li *ngFor="let stat of pokemon.stats">
+      {{ stat.stat.name | uppercase }}
+      base: {{ stat.base_stat }}
+      effort: {{ stat.effort }}
+    </li>
+  </ul>
+</div>
