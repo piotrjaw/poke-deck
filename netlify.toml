@@ -1,0 +1,5 @@
+# This is needed for the angular routing to work in netlify
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
