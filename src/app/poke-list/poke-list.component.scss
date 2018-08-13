@@ -1,0 +1,14 @@
+@import '../../mixins';
+@import '../../variables';
+
+.poke-list {
+  &__link {
+    color: $text-color;
+    height: $list-line-height;
+    line-height: $list-line-height ;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include hoverOpacity;
+  }
+}

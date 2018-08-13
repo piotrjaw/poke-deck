@@ -1,0 +1,56 @@
+@import '../../mixins';
+@import '../../variables';
+
+.poke-detail {
+  display: flex;
+  flex-direction: column;
+
+  &__back-button {
+    color: $text-color;
+    opacity: $text-opacity;
+    text-decoration: none;
+
+    @include hoverOpacity;
+  }
+
+  &__header {
+    margin: 15px auto 0;
+  }
+
+  &__image {
+    height: 90vw;
+    width: 90vw;
+
+    @include sm-up {
+      height: 300px;
+      width: 300px;
+    }
+  }
+
+  &__name {
+    text-transform: uppercase;
+    opacity: $text-opacity;
+    font-size: 20px;
+  }
+
+  &__navi-link {
+    color: $text-color;
+    font-size: 30px;
+    opacity: $text-opacity;
+    text-decoration: none;
+
+    @include hoverOpacity;
+
+    &--disabled {
+      opacity: 0.4;
+      pointer-events: none;
+      touch-action: none;
+    }
+  }
+
+  &__stat-row {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+}

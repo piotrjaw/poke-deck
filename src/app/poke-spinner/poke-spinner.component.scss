@@ -1,11 +1,11 @@
-.poke-spinner{
+.poke-spinner {
   &__image {
     animation: rotation 1s infinite linear;
   }
 }
 
 @keyframes rotation {
-  0% { transform: rotate(0) scale(2); }
-  50% { transform: rotate(180deg) scale(1); }
-  100% { transform: rotate(360deg) scale(2); }
+  0% { transform: rotate(0) scale(4); }
+  50% { transform: rotate(180deg) scale(3); }
+  100% { transform: rotate(360deg) scale(4); }
 }

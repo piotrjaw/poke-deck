@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, HostListener, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pokemon } from '../pokemon';
 import { PokemonService } from '../pokemon.service';
@@ -9,7 +9,7 @@ import { PokemonService } from '../pokemon.service';
   styleUrls: ['./poke-detail.component.scss']
 })
 export class PokeDetailComponent implements OnInit {
-  private pokemon: Pokemon;
+  public pokemon: Pokemon;
   private nextId: number;
   private previousId: number;
 
@@ -19,8 +19,25 @@ export class PokeDetailComponent implements OnInit {
     private router: Router,
   ) {}
 
-  goBack(): void {
-    this.router.navigate(['']);
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent): void {
+    switch (event.keyCode) {
+      case 27:
+        this.router.navigate(['']);
+        break;
+      case 37:
+        if (this.previousId > 0) {
+          this.router.navigate(['/pokemon', this.previousId]);
+        }
+        break;
+      case 39:
+        if (this.nextId > 0) {
+          this.router.navigate(['/pokemon', this.nextId]);
+        }
+        break;
+      default:
+        break;
+    }
   }
 
   getPokemon(id: number): void {

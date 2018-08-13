@@ -1,0 +1,17 @@
+@mixin hoverOpacity {
+  &:hover {
+    animation: opacityBlink 1s infinite linear;
+  }
+}
+
+@keyframes opacityBlink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+@mixin sm-up {
+  @media only screen and (min-width: 480px) {
+    @content;
+  }
+}

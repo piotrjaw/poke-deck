@@ -1,0 +1,13 @@
+.poke-index {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__list {
+    margin-top: 20px;
+  }
+
+  &__pagination {
+    margin-top: 10px;
+  }
+}

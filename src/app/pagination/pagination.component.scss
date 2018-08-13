@@ -1,0 +1,21 @@
+@import '../../mixins';
+@import '../../variables';
+
+.pagination {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  opacity: $text-opacity;
+
+  &__button {
+    background-color: transparent;
+    border-width: 0;
+    cursor: pointer;
+    font-size: 20px;
+    height: 26px;
+    padding-bottom: 3px;
+    padding-top: 0;
+
+    @include hoverOpacity;
+  }
+}

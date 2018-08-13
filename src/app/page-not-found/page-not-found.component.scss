@@ -1,0 +1,14 @@
+.page-not-found {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding: 0 10%;
+
+  &__image {
+    box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.4);
+    filter: none;
+    max-width: 100%;
+    opacity: 1;
+  }
+}

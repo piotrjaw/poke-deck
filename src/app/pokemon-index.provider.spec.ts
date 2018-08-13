@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { PokemonIndexProviderService } from './pokemon-index-provider.service';
+import { PokemonIndexProvider } from './pokemon-index.provider';
 
-describe('PokemonIndexProviderService', () => {
+describe('PokemonIndexProvider', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PokemonIndexProviderService]
+      providers: [PokemonIndexProvider]
     });
   });
 
-  it('should be created', inject([PokemonIndexProviderService], (service: PokemonIndexProviderService) => {
+  it('should be created', inject([PokemonIndexProvider], (service: PokemonIndexProvider) => {
     expect(service).toBeTruthy();
   }));
 });

@@ -1,0 +1,16 @@
+
+@import '../../variables';
+
+.poke-search {
+  &__input {
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    border-color: $text-color;
+    background-color: transparent;
+    color: $text-color;
+    height: 40px;
+    line-height: 40px;
+    opacity: $text-opacity;
+    width: 100%;
+  }
+}

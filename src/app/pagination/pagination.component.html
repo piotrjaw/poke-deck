@@ -1,14 +1,17 @@
-<div *ngIf="pageCount > 0">
+<div
+  class="pagination"
+  *ngIf="pageCount > 0"
+>
   <button
+    class="pagination__button"
     [disabled]="pageNumber === 0"
     (click)="changePage(pageNumber - 1)"
   >
     <
   </button>
-  {{ pageNumber + 1 }}
-  of
-  {{ pageCount }}
+  {{ pageNumber + 1 }} OF {{ pageCount }}
   <button
+    class="pagination__button"
     [disabled]="pageNumber === (pageCount - 1)"
     (click)="changePage(pageNumber + 1)"
   >

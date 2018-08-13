@@ -2,26 +2,36 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Install:
+- NodeJS LTS
+- latest yarn
 
-## Code scaffolding
+Before first usage, please run `make install`,
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Dev server
 
-## Build
+Run `make start`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Production Build
 
-## Running unit tests
+Run `make build`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Linting
 
-## Running end-to-end tests
+Run `make lint`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Unit tests
 
-## Further help
+Run `make test`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Features
+- the app caches requests for single Pokemon
+- during init phase the app downloads a full dictionary of Pokemon - this way it's impossible to navigate to a non-existing one
+- the detail page recognises basic keyboard navigation (horizontal arrows and the escape button)
+
+## TO-DO
+- fix the loader - this one is not working during the init phase, it's also not very customisable
+- implement caching in the Pokemon list
+- fix tests and add more coverage

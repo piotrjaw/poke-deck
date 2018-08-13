@@ -1,8 +1,15 @@
-<app-poke-search></app-poke-search>
-<app-poke-list></app-poke-list>
-<app-pagination
-  [pageCount]="pageCount"
-  [pageNumber]="pageNumber"
-  (change)="changePage($event)"
->
-</app-pagination>
+<div class="poke-container poke-index">
+  <div>
+    <app-poke-search></app-poke-search>
+    <app-poke-list class="poke-index__list"></app-poke-list>
+  </div>
+  <div>
+    <app-pagination
+      class="poke-index__pagination"
+      [pageCount]="pageCount"
+      [pageNumber]="pageNumber"
+      (change)="changePage($event)"
+    >
+    </app-pagination>
+  </div>
+</div>

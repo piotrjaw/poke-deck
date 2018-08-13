@@ -7,8 +7,8 @@ import { PokemonService } from '../pokemon.service';
   styleUrls: ['./poke-index.component.scss']
 })
 export class PokeIndexComponent implements OnInit {
-  private pageCount: number;
-  private pageNumber: number;
+  public pageCount: number;
+  public pageNumber: number;
 
   constructor(
     private pokemonService: PokemonService,

@@ -1,24 +1,51 @@
-<div *ngIf="pokemon">
-  <button (click)="goBack()">Go back</button>
+<div
+  class="poke-detail poke-container"
+  *ngIf="pokemon"
+>
   <a
-    [routerLink]="['/pokemon', previousId]"
-    [ngClass]="{'poke-detail__navi-link': true, 'poke-detail__navi-link--disabled': previousId === 0}"
+    class="poke-detail__back-button"
+    [routerLink]="['']"
   >
-    Previous
+    << GO BACK
   </a>
-  <a
-    [routerLink]="['/pokemon', nextId]"
-    [ngClass]="{'poke-detail__navi-link': true, 'poke-detail__navi-link--disabled': next === 0}"
+  <div class="poke-detail__header">
+    <a
+      [ngClass]="{
+        'poke-detail__navi-link': true,
+        'poke-detail__navi-link--disabled': previousId === 0
+      }"
+      [routerLink]="['/pokemon', previousId]"
+    >
+      <
+    </a>
+    <span class="poke-detail__name">
+      {{ pokemon.name }}
+    </span>
+    <a
+      [ngClass]="{
+        'poke-detail__navi-link': true,
+        'poke-detail__navi-link--disabled': nextId === 0
+      }"
+      [routerLink]="['/pokemon', nextId]"
+    >
+      >
+    </a>
+  </div>
+  <img
+    ngClass="poke-detail__image"
+    src="{{ pokemon.image }}"
   >
-    Next
-  </a>
-  {{ pokemon.name }}
-  <img src="{{ pokemon.image }}">
   <ul>
-    <li *ngFor="let stat of pokemon.stats">
-      {{ stat.stat.name | uppercase }}
-      base: {{ stat.base_stat }}
-      effort: {{ stat.effort }}
+    <li
+      class="poke-detail__stat-row"
+      *ngFor="let stat of pokemon.stats"
+    >
+      <span>
+        {{ stat.stat.name | uppercase }}
+      </span>
+      <span>
+        {{ stat.base_stat }}/{{ stat.effort }}
+      </span>
     </li>
   </ul>
 </div>

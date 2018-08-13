@@ -1,10 +1,10 @@
 .PHONY: start
 start:
-	ng serve --open
+	ng serve --ssl --open
 
 .PHONY: build
 build:
-	ng build
+	ng build --prod
 
 .PHONY: test
 test:
@@ -13,10 +13,6 @@ test:
 .PHONY: lint
 lint:
 	ng lint
-
-.PHONY: e2e
-e2e:
-	ng e2e
 
 .PHONY: install
 install:
