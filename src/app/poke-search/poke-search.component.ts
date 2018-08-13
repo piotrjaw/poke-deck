@@ -14,10 +14,19 @@ import { PokemonService } from '../pokemon.service';
   styleUrls: ['./poke-search.component.scss']
 })
 export class PokeSearchComponent implements OnInit {
-  private searchTerm$ = new Subject<number>();
+  private lastId: number;
+  private searchId$: Subject<number> = new Subject<number>();
 
-  search(id: number): void {
-    this.searchTerm$.next(id);
+  search(event: any): void {
+    const inputValue = event.target.value;
+    const trimmedValue = inputValue.replace(/\D/g, '');
+    if (inputValue !== trimmedValue) {
+      event.target.value = trimmedValue;
+    }
+    if (trimmedValue !== this.lastId) {
+      this.searchId$.next(trimmedValue);
+      this.lastId = trimmedValue;
+    }
   }
 
   constructor(
@@ -25,13 +34,13 @@ export class PokeSearchComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.searchTerm$
+    this.searchId$
       .pipe(
         debounceTime(500),
         distinctUntilChanged(),
       )
       .subscribe(
-        term => this.pokemonService.search(Number(term)),
+        searchId => this.pokemonService.search(Number(searchId)),
       );
   }
 }

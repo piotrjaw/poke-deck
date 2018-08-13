@@ -110,6 +110,9 @@ export class PokemonService {
   }
 
   search(id: number): void {
+    if (!this.pokemonIndexProvider.pokemonIndex.includes(id)) {
+      return;
+    }
     this.getPokemons(id);
   }
 }
