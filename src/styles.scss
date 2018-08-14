@@ -9,7 +9,10 @@ body {
   font-family: 'hardpixelregular', monospace;
   height: 100vh;
   letter-spacing: 1px;
-  min-height: 800px;
+
+  @include sm-up {
+    min-height: 800px;
+  }
 }
 
 #spinner {
